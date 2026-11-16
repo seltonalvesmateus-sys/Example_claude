@@ -1,24 +1,64 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Packaging / build
+build/
+dist/
+*.egg-info/
+.eggs/
+wheels/
+pip-wheel-metadata/
+*.egg
+
+# Test, coverage and type-check caches
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.hypothesis/
+
+# ---- FastAPI / app ----
+.env
+.env.*
+!.env.example
+*.db
+*.sqlite
+*.sqlite3
+alembic/versions/__pycache__/
+uploads/
+media/
+
+# Jupyter
+.ipynb_checkpoints/
+
 # Logs
-logs
+logs/
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
+# ---- Editors / OS ----
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
+.idea/
 *.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+.DS_Store
+Thumbs.db
+
+# ---- Node (frontend deste repositório) ----
+node_modules/
+dist-ssr/
+*.local
+npm-debug.log*
