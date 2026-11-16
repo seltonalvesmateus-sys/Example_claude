@@ -1,0 +1,81 @@
+:root {
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --text: #1c2030;
+  --muted: #5f667d;
+  --border: #d9dcea;
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --danger: #c62828;
+  --success: #2e7d32;
+  --bubble-text: #ffffff;
+  /* Texto sobre fundos de destaque (botões, número dos passos): branco nos dois temas. */
+  --on-accent: #ffffff;
+  --chart-l: 45%;
+  color-scheme: light dark;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* Tema claro forçado pelo usuário. */
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+/* Tema escuro: automático (sistema) quando o usuário não escolheu nada... */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #12141c;
+    --surface: #1b1e2b;
+    --text: #e8eaf4;
+    --muted: #9aa1ba;
+    --border: #2d3147;
+    --accent: #818cf8;
+    --accent-hover: #6366f1;
+    --danger: #ff8a80;
+    --success: #66bb6a;
+    --bubble-text: #12141c;
+    --chart-l: 68%;
+  }
+}
+
+/* ...ou forçado pelo usuário. */
+:root[data-theme='dark'] {
+  --bg: #12141c;
+  --surface: #1b1e2b;
+  --text: #e8eaf4;
+  --muted: #9aa1ba;
+  --border: #2d3147;
+  --accent: #818cf8;
+  --accent-hover: #6366f1;
+  --danger: #ff8a80;
+  --success: #66bb6a;
+  --bubble-text: #12141c;
+  --chart-l: 68%;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+}

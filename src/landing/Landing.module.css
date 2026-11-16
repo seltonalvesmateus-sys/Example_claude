@@ -1,0 +1,515 @@
+/*
+ * Landing page, estilo Flat Design (recomendação da skill ui-ux-pro-max para "Productivity Tool"):
+ * cores sólidas, bordas finas, sem gradientes nem sombras, transições de 150 ms.
+ * Texto e fundos vêm das variáveis do app, então o tema claro/escuro funciona sozinho.
+ */
+.page {
+  /* Ação principal em laranja escuro: texto branco passa de 4.5:1 (5.2:1) nos dois temas. */
+  --action: #c2410c;
+  --action-hover: #9a3412;
+  /* Índigo da marca com texto branco: 8:1. */
+  --brand-solid: #4338ca;
+  --brand-solid-hover: #3730a3;
+  /* Texto secundário e destaque claro sobre o índigo: cerca de 6:1 sobre o fundo sólido. */
+  --on-brand-soft: #e0e7ff;
+  font-family:
+    'Plus Jakarta Sans Variable',
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.header,
+.main > section,
+.footer {
+  width: min(1040px, 100% - 2rem);
+  margin-inline: auto;
+}
+
+.page a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.main:focus {
+  outline: none;
+}
+
+/* ---------- Pular navegação ---------- */
+
+.skip {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 30;
+  padding: 0.7rem 1rem;
+  color: var(--on-accent);
+  font-weight: 700;
+  text-decoration: none;
+  background: var(--brand-solid);
+  border-radius: 8px;
+  transform: translateY(-200%);
+}
+
+.skip:focus-visible {
+  transform: translateY(0);
+}
+
+/* ---------- Cabeçalho fixo ---------- */
+
+.headerBar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  min-height: 4.25rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--accent);
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 0.25rem;
+  margin-inline: auto 0;
+}
+
+.nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 0.75rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: color 150ms ease-out;
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.headerCta {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 1.1rem;
+  color: var(--on-accent);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  background: var(--action);
+  border-radius: 8px;
+  transition: background 150ms ease-out;
+}
+
+.headerCta:hover {
+  background: var(--action-hover);
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 3.5rem 0 4.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--success);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.headline {
+  margin: 0;
+  font-size: clamp(2rem, 4.5vw, 3.1rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.headline span {
+  color: var(--accent);
+}
+
+.lead {
+  max-width: 34rem;
+  margin: 1.25rem 0 0;
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.65;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.primary,
+.secondary,
+.primaryLight {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 8px;
+  transition:
+    background 150ms ease-out,
+    border-color 150ms ease-out,
+    color 150ms ease-out,
+    transform 150ms ease-out;
+}
+
+.primary:active,
+.secondary:active,
+.primaryLight:active,
+.headerCta:active {
+  transform: translateY(1px);
+}
+
+.primary {
+  color: var(--on-accent);
+  background: var(--action);
+}
+
+.primary:hover {
+  background: var(--action-hover);
+}
+
+.secondary {
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.secondary:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.note {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- Seções ---------- */
+
+.section {
+  padding: 3.5rem 0;
+  /* Compensa o cabeçalho fixo ao navegar pelas âncoras (foco não pode ficar escondido). */
+  scroll-margin-top: 5rem;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.subtitle {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step,
+.card {
+  padding: 1.4rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.stepNumber {
+  display: inline-grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  color: var(--on-accent);
+  font-weight: 800;
+  background: var(--brand-solid);
+  border-radius: 50%;
+}
+
+.step h3,
+.card h3,
+.cases h3,
+.bag h3 {
+  margin: 0.9rem 0 0.4rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.step p,
+.card p,
+.cases p,
+.bag p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.bag {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  padding: 1.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+}
+
+.bag h3 {
+  margin-top: 0;
+}
+
+.bag strong {
+  color: var(--text);
+}
+
+.bagExample {
+  padding: 1.1rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.bagText {
+  margin: 0 0 0.75rem;
+  color: var(--text);
+  font-style: italic;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chips li {
+  padding: 0.25rem 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.chips strong {
+  margin-left: 0.25rem;
+  color: var(--accent);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  transition: border-color 150ms ease-out;
+}
+
+.card:hover {
+  border-color: var(--accent);
+}
+
+.icon {
+  display: inline-grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, var(--surface));
+  border-radius: 10px;
+}
+
+.card h3 {
+  margin-top: 1rem;
+}
+
+.cases {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cases li {
+  padding-left: 1rem;
+  border-left: 3px solid var(--accent);
+}
+
+.cases h3 {
+  margin-top: 0;
+}
+
+.notes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  max-width: 46rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  color: var(--muted);
+  list-style: none;
+}
+
+.notes li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+.notes svg {
+  flex: none;
+  margin-top: 0.15rem;
+  color: var(--success);
+}
+
+/* ---------- Chamada final e rodapé ---------- */
+
+.final {
+  margin-block: 1.5rem 3rem;
+  padding: 3rem 1.5rem;
+  color: var(--on-accent);
+  text-align: center;
+  background: var(--brand-solid);
+  border-radius: 16px;
+}
+
+.final h2 {
+  margin: 0;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 800;
+  text-wrap: balance;
+}
+
+.final p {
+  margin: 0.5rem 0 1.5rem;
+  color: var(--on-brand-soft);
+}
+
+.primaryLight {
+  color: var(--brand-solid);
+  background: var(--on-accent);
+}
+
+.primaryLight:hover {
+  background: var(--on-brand-soft);
+}
+
+.final a:focus-visible {
+  outline-color: var(--on-accent);
+}
+
+.footer {
+  padding: 1.5rem 0 3rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+/* ---------- Responsivo e acessibilidade ---------- */
+
+@media (max-width: 800px) {
+  .hero,
+  .bag {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 2rem;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .headerActions {
+    margin-left: auto;
+  }
+
+  .actions a {
+    flex: 1 1 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav a,
+  .headerCta,
+  .primary,
+  .secondary,
+  .primaryLight,
+  .card {
+    transition: none;
+  }
+
+  .primary:active,
+  .secondary:active,
+  .primaryLight:active,
+  .headerCta:active {
+    transform: none;
+  }
+}

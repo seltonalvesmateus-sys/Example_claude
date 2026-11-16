@@ -1,0 +1,9 @@
+.error {
+  color: var(--danger);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.error:empty {
+  display: none;
+}

@@ -1,0 +1,70 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.svg {
+  width: 220px;
+  max-width: 100%;
+}
+
+.track {
+  fill: none;
+  stroke: var(--bg);
+  stroke-width: 6;
+}
+
+.slice {
+  fill: none;
+  stroke-width: 6;
+}
+
+.total {
+  fill: var(--text);
+  font-size: 7px;
+  font-weight: 700;
+  text-anchor: middle;
+}
+
+.totalLabel {
+  fill: var(--muted);
+  font-size: 3px;
+  text-anchor: middle;
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 180px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.dot {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+}
+
+.label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.percent {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}

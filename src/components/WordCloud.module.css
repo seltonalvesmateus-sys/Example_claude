@@ -1,0 +1,29 @@
+.cloud {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem 0.9rem;
+  margin: 0;
+  padding: 1rem 0.5rem;
+  list-style: none;
+}
+
+.word {
+  /* --weight vai de 0 a 1: a palavra mais frequente chega a ~3.4rem. */
+  font-size: calc(0.95rem + var(--weight) * 2.45rem);
+  font-weight: 700;
+  line-height: 1.1;
+  cursor: default;
+  transition: transform 0.2s ease;
+}
+
+.word:hover {
+  transform: scale(1.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .word {
+    transition: none;
+  }
+}

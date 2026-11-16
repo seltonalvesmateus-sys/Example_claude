@@ -1,0 +1,5 @@
+dist
+node_modules
+package-lock.json
+# Arquivos de skills e comandos não são código do app: o Prettier não deve reformatá-los.
+.claude
